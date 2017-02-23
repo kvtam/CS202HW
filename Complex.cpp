@@ -7,6 +7,7 @@
 #include "Complex.h"
 #include <cmath>
 #include <iostream>
+#define PI 3.14159265
 using std::cout;
 using std::endl;
 
@@ -37,10 +38,17 @@ double Complex::getImPart() const{
 double Complex::getMagnitude() const{
 	return std::sqrt(std::pow(_real,2)*std::pow(_imaginary,2));
 }
-Complex& Complex::getConjugate(){
+Complex Complex::getConjugate(){
+	
+	return {_real,-_imaginary};
+}
 
-	this->_imaginary*= -1;
-	return *this;
+
+double Complex::getAngle_Deg() const{
+	return (180/PI)*(atan2(_imaginary,_real));
+}
+double Complex::getAngle_Rads() const{
+	return (atan2(_imaginary,_real));
 }
 /////MTORS/////////
 void Complex::setImPart(const double & imValue){

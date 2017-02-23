@@ -17,7 +17,9 @@ class Complex{
 		double getRealPart() const;
 		double getImPart() const;
 		double getMagnitude() const; 
-		Complex& getConjugate(); 
+		Complex getConjugate(); 
+		double getAngle_Deg() const;
+		double getAngle_Rads() const;
 		////MTORS////
 		void setRealPart(const double  &realValue);
 		void setImPart(const double  &imValue);
@@ -35,11 +37,7 @@ class Complex{
 		////Insertion/////
 		Complex& operator<<(const Complex & c);
 		///Comparison////
-		bool operator<(const Complex & c);
-		bool operator>(const Complex & c);
 		bool operator==(const Complex & c);
-		bool operator<=(const Complex & c);
-		bool operator>=(const Complex & c);
 		bool operator!=(const Complex & c);
 		
 	private:
