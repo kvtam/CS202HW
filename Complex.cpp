@@ -7,9 +7,9 @@
 #include "Complex.h"
 #include <cmath>
 #include <iostream>
+#include <string>
 #define PI 3.14159265
-using std::cout;
-using std::endl;
+
 
 /////////CTORS////////////
 Complex::Complex(){
@@ -92,3 +92,35 @@ Complex& Complex::operator/=( Complex  c){
 	return *this;
 }
 	
+////BINARY 
+Complex& Complex::operator*(const Complex& c ){
+	return (*this)*=c;
+}
+Complex& Complex::operator+(const Complex& c ){
+	return (*this)+=c;
+}
+Complex& Complex::operator-(const Complex& c ){
+	return (*this)-=c;
+}
+Complex& Complex::operator/(const Complex& c ){
+	return (*this)/=c;
+}
+///////Extraction
+std::string Complex::toString(){
+	std::string temp= "";
+	temp+= std::to_string(_real);
+	if(_imaginary>0){
+		temp+=" + "+std::to_string(_imaginary)+"i";
+	}else if(_imaginary <0){
+		temp+=" - "+std::to_string(_imaginary)+"i";
+	}
+	return temp;	
+}
+
+std::ostream& operator<<( std::ostream & os,  Complex &c){
+	
+	os<<c.toString();
+	if(!os)
+	std::cout<<c.toString();
+	return os;
+}

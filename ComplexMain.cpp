@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "Complex.h"
 using std::cout;
 using std::endl;
@@ -32,7 +33,6 @@ int main(){
 	cout<<temp.getRealPart()<<" "<<temp.getImPart()<<endl;
 	cout<<c7.getAngle_Deg()<<endl;
 
-	
 	
 	
 	

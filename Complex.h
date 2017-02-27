@@ -6,7 +6,8 @@
 
 #ifndef COMPLEX_H
 #define COMPLEX_H
-
+#include <string>
+#include <iostream>
 class Complex{
 	public:
 		////CTORS////
@@ -35,14 +36,17 @@ class Complex{
 		Complex& operator*=(const Complex & c);
 		Complex& operator/=( Complex  c);
 		////Insertion/////
-		Complex& operator<<(const Complex & c);
+		friend std::ostream& operator<<(const Complex & c, std::ostream &os);
+	
 		///Comparison////
 		bool operator==(const Complex & c);
 		bool operator!=(const Complex & c);
+			std::string toString();
 		
 	private:
 		double _real;
 		double _imaginary;
+	 
 		
 };
 #endif
