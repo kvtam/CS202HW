@@ -26,13 +26,14 @@ int main(){
 	c3=c3.getConjugate();
 	c2/=c4;
 	c6=c6.getConjugate();
-	cout<<c1.getRealPart()<<" "<<c1.getImPart()<<endl;
+/*	cout<<c1.getRealPart()<<" "<<c1.getImPart()<<endl;
 	cout<<"real part "<<c2.getRealPart()<<" IM part "<<c2.getImPart()<<endl;
 	cout<<c5.getRealPart()<<" "<<c5.getImPart()<<endl;
 	cout<<c6.getRealPart()<<" "<<c6.getImPart()<<endl;
 	cout<<temp.getRealPart()<<" "<<temp.getImPart()<<endl;
 	cout<<c7.getAngle_Deg()<<endl;
-
+*/
+	cout<<c3;
 	
 	
 	

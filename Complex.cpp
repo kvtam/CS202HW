@@ -8,6 +8,7 @@
 #include <cmath>
 #include <iostream>
 #include <string>
+#include <sstream>
 #define PI 3.14159265
 
 
@@ -119,8 +120,11 @@ std::string Complex::toString(){
 
 std::ostream& operator<<( std::ostream & os,  Complex &c){
 	
-	os<<c.toString();
-	if(!os)
-	std::cout<<c.toString();
-	return os;
+	
+	if(c.getImPart()>0)
+	return os<<c.getRealPart()<<" + "<<c.getImPart()<<"i";
+	if(c.getImPart()<0)
+	return os<<c.getRealPart()<<" - "<<c.getImPart()<<"i";
+	
+	return  os<<c.getRealPart();
 }
